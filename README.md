@@ -7,3 +7,6 @@ The Gen-AI Global Community is an independent professional network created in co
  - Industry acceleration: It works to foster collaboration, accelerate innovation, and drive cross-sector growth by helping professionals experiment with and deploy cutting-edge AI solutions.
 
  - Digital community management: The organization pioneers new standards for AI-driven member experiences and digital community management. 
+
+## Website
+Open `index.html` in your browser to explore the community's static website, designed with Bootstrap.
