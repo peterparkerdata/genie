@@ -1,21 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const yearSpan = document.getElementById('year');
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  const form = document.getElementById('signup-form');
+  const form = document.getElementById("signup-form");
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         e.stopPropagation();
-        form.classList.add('was-validated');
+        form.classList.add("was-validated");
         return;
       }
-      alert('Thank you for joining the Gen-AI Global Community!');
+      alert("Thank you for joining the Gen-AI Global Community!");
       form.reset();
-      form.classList.remove('was-validated');
+      form.classList.remove("was-validated");
     });
   }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  document.querySelectorAll(".fade-section").forEach((section) => {
+    observer.observe(section);
+  });
 });
